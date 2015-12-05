@@ -78,13 +78,13 @@ namespace Its.Configuration.Tests
         {
             Settings.For<Widget<DateTime>>.GetSerializedSetting = key => new
             {
-                TheSetting = "2/20/2013"
+                TheSetting = "2013-2-20"
             }.ToJson();
 
             var settings = Settings.Get<Widget<DateTime>>();
 
             settings.TheSetting
-                    .Should().Be(DateTime.Parse("2/20/2013"));
+                    .Should().Be(DateTime.Parse("2013-2-20"));
         }
 
         [Test]
@@ -92,13 +92,13 @@ namespace Its.Configuration.Tests
         {
             Settings.For<Widget<DateTimeOffset>>.GetSerializedSetting = key => new
             {
-                TheSetting = "2/20/2013"
+                TheSetting = "2013-2-20"
             }.ToJson();
 
             var settings = Settings.Get<Widget<DateTimeOffset>>();
 
             settings.TheSetting
-                    .Should().Be(DateTimeOffset.Parse("2/20/2013"));
+                    .Should().Be(DateTimeOffset.Parse("2013-2-20"));
         }
 
         [Test]
